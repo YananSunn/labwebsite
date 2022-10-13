@@ -1,0 +1,24 @@
+{
+  "name": "labwebsite",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "element-plus": "^2.2.17",
+    "express": "^4.18.1",
+    "socket.io": "^4.5.2",
+    "socket.io-client": "^4.5.2",
+    "videojs-flash": "^2.2.1",
+    "view-ui-plus": "^1.3.1",
+    "vue": "^3.2.38",
+    "vue-router": "^4.1.5",
+    "vue-video-player": "^6.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.3",
+    "vite": "^3.0.9"
+  }
+}
