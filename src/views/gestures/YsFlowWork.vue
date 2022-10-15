@@ -1,5 +1,5 @@
 <template>
-  <el-carousel indicator-position="outside" height="600px" style="min-height:500px;text-align:center" pause-on-hover trigger="click">
+  <el-carousel indicator-position="outside" height="600px" style="min-height:500px;text-align:center" :autoplay="disabled" trigger="click"  arrow="always">
     <el-carousel-item v-for="item in 4" :key="item">
       <el-image v-if="item == 1" src="../ys_1.png" fit="contain" />
       <el-image v-if="item == 2" src="../ys_2.png" fit="contain" />
@@ -81,9 +81,10 @@
       >
         <el-upload
           class="upload-demo"
+          accept="audio/wav"
           drag
           action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-          multiple
+          show-file-list
         >
           <el-icon class="el-icon--upload"><upload-filled /></el-icon>
           <div class="el-upload__text">
@@ -91,7 +92,7 @@
           </div>
           <template #tip>
             <div class="el-upload__tip">
-              仅支持wav和mp3格式
+              仅支持wav格式
             </div>
           </template>
         </el-upload>
@@ -156,7 +157,7 @@ function onSubmit() {
   socket.emit("hello2","client to server");
 }
 
-const activeName = ref('1');
+const activeName = ref(['1', '2', '3']);
 
 import { io } from "socket.io-client";
 var socket = io.connect('localhost:8888',{
@@ -169,6 +170,9 @@ socket.emit("hello2","client to server");
 socket.on("hello", (data) => {
   console.log(data);
 });
+
+
+const disabled = ref(false);
 
 
 
